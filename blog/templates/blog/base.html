@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>My BLOG</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+     <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h1><a href="/">My BLOG</a></h1>
+     </div>
+ <div>
+            <p>published: 30.03.2018, 08:14</p>
+            <h2><a href="">My post</a></h2>
+            <p>This is a sample post to familiarize more with html commands</p>
+        </div>
+
+        <div>
+            <p>published: 31.03.2018, 12:14</p>
+            <h2><a href="">Small Story - The selfish giant</a></h2>
+            <p>A group of children would play in the garden belonging to a giant each day after school. One day, the giant returns home from a seven year visit to his friend, a Cornish ogre. Furious at finding the children trespassing, he chases them out and proceeds to build a wall around his garden.</p>
+        </div>
+
+      <div class="content container">
+        <div class="row">
+           <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+           </div>
+        </div>
+      </div>
+    </body>
+</html>
